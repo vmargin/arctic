@@ -1,7 +1,7 @@
 {
-  "name": "aircon-service-backend",
+  "name": "arctic-backend",
   "version": "2.0.0",
-  "description": "Backend API for Aircon Service Management System",
+  "description": "Backend API for Arctic Aircon Service Management System",
   "main": "dist/src/server.js",
   "scripts": {
     "start": "node dist/src/server.js",

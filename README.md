@@ -1,9 +1,9 @@
-# Aircon Service Management
+# Arctic | Aircon Service Management
 
 Internal tool for an aircon servicing company with multiple branches. Staff log
 in, book jobs, dispatch technicians, and bill the work.
 
-**Live demo:** https://aircon-service.vercel.app
+**Current live demo:** https://aircon-service.vercel.app
 
 **Stack:** Express + Prisma + PostgreSQL, React + Vite + Tailwind, TypeScript
 throughout. It deploys as **one service on one URL** — the API also serves the
@@ -16,8 +16,8 @@ built frontend, so there is no second host and no CORS to configure.
 You need Node 18+ and PostgreSQL 14+ installed.
 
 ```bash
-git clone https://github.com/vmargin/aircon-service.git
-cd aircon-service
+git clone https://github.com/vmargin/arctic.git
+cd arctic
 
 npm run setup                      # install backend + frontend deps
 npm run local                      # create/use isolated .local data, migrate, seed, build and serve
