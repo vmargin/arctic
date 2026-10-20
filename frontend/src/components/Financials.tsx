@@ -428,8 +428,8 @@ export default function Financials() {
                 <div className="invoice-document">
                   <div className="invoice-heading">
                     <div>
-                      <h2>ARCTIC</h2>
-                      <p className="muted">Aircon Service Management</p>
+                      <h2>ARCTIC AIRCON</h2>
+                      <p className="muted">Service Management</p>
                     </div>
                     <div>
                       <strong>

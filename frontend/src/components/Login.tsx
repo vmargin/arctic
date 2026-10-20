@@ -84,7 +84,7 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <p className="login-brand-footer">ARCTIC · Keep every space cool.</p>
+        <p className="login-brand-footer">ARCTIC AIRCON · Keep every space cool.</p>
         <div className="login-circles" aria-hidden="true" />
       </section>
       <section className="login-form-side">
@@ -125,7 +125,7 @@ export default function Login() {
               </p>
             )}
             <Button type="submit" loading={pending}>
-              Sign in to ARCTIC
+              Sign in to ARCTIC AIRCON
               <ArrowRight size={16} />
             </Button>
           </form>

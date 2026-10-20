@@ -323,7 +323,7 @@ function AppLayout({
     NAV.flatMap((g) => g.entries).find((n) => n.to === location.pathname)
       ?.label ?? "Settings";
   useEffect(() => {
-    document.title = `${current} | ARCTIC`;
+    document.title = `${current} | ARCTIC AIRCON`;
     setDrawer(false);
   }, [current]);
   useEffect(() => {
@@ -454,9 +454,9 @@ function AppLayout({
           <Outlet />
           <footer className="app-footer">
             <span>
-              <strong>ARCTIC</strong>Keep every space cool.
+              <strong>ARCTIC AIRCON</strong>Keep every space cool.
             </span>
-            <span>Aircon service management for a cooler tomorrow.</span>
+            <span>ARCTIC AIRCON service management for a cooler tomorrow.</span>
           </footer>
         </main>
       </div>

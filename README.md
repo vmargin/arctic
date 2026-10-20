@@ -1,9 +1,9 @@
-# Arctic | Aircon Service Management
+# ARCTIC AIRCON | Service Management
 
 Internal tool for an aircon servicing company with multiple branches. Staff log
 in, book jobs, dispatch technicians, and bill the work.
 
-**Current live demo:** https://aircon-service.vercel.app
+**Live demo:** https://arcticaircon.vercel.app
 
 **Stack:** Express + Prisma + PostgreSQL, React + Vite + Tailwind, TypeScript
 throughout. It deploys as **one service on one URL** — the API also serves the

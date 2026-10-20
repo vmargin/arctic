@@ -2,7 +2,7 @@
     "name": "arctic",
     "version": "2.0.0",
     "private": true,
-    "description": "Arctic aircon service management — Express + Prisma API serving a React SPA",
+    "description": "ARCTIC AIRCON service management — Express + Prisma API serving a React SPA",
     "scripts": {
         "setup": "npm install --prefix backend && npm install --prefix frontend",
         "db:up": "docker compose up -d --wait",
