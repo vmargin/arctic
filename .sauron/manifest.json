@@ -1,0 +1,286 @@
+{
+  "installedAt": "2026-10-02T16:34:04.847Z",
+  "version": "1.0.0",
+  "managedFiles": [
+    {
+      "path": "CLAUDE.md",
+      "runtime": "claude",
+      "backupPath": null,
+      "checksum": "sha256:a0718e9425cd578f306ea99456d9cacd6c2ceb70311f73373577f2f5527d34df",
+      "lastUpdated": "2026-10-02T16:34:04.848Z"
+    },
+    {
+      "path": ".cursorrules",
+      "runtime": "cursor",
+      "backupPath": null,
+      "checksum": "sha256:148951428dc595d71b554b3bf5efadb87819a1af2a940782d03f77ea354c0922",
+      "lastUpdated": "2026-10-02T16:34:04.851Z"
+    },
+    {
+      "path": ".cursor/rules/sauron.mdc",
+      "runtime": "cursor",
+      "backupPath": null,
+      "checksum": "sha256:d442ee9f5322dff1e829219d96bb294a1bc1121135d57574c011c29a88f9612e",
+      "lastUpdated": "2026-10-02T16:34:04.853Z"
+    },
+    {
+      "path": ".windsurfrules",
+      "runtime": "windsurf",
+      "backupPath": null,
+      "checksum": "sha256:77f0f071b814cd0fae14ff20dd54585e0e6b8bc1f1c46883020ed20d06b28f70",
+      "lastUpdated": "2026-10-02T16:34:04.855Z"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "runtime": "copilot",
+      "backupPath": null,
+      "checksum": "sha256:3304023850f2e7e7cf6cad11125108be2f859d7e6eb126018e6b9bbdab0f9e05",
+      "lastUpdated": "2026-10-02T16:34:04.856Z"
+    },
+    {
+      "path": ".github/hooks/agent-guard.json",
+      "runtime": "copilot",
+      "backupPath": null,
+      "checksum": "sha256:5652f3f06f70c66ffc20a0a6dadc4098ca66bcf1f29600e9a9d6889be5d961d6",
+      "lastUpdated": "2026-10-02T16:34:04.858Z"
+    },
+    {
+      "path": ".clinerules",
+      "runtime": "cline",
+      "backupPath": null,
+      "checksum": "sha256:a36a7fec407161c2b5c89af17d308dcb9fa3ba2454883941d41cff76bc80cfee",
+      "lastUpdated": "2026-10-02T16:34:04.860Z"
+    },
+    {
+      "path": ".traerules",
+      "runtime": "trae",
+      "backupPath": null,
+      "checksum": "sha256:70f04a6fa147600c82ce67f5b1d3c1832a87ea87c94c4fd5c7ab4c75341429ce",
+      "lastUpdated": "2026-10-02T16:34:04.862Z"
+    },
+    {
+      "path": ".zed/settings.json",
+      "runtime": "zed",
+      "backupPath": null,
+      "checksum": "sha256:1ac33274062c57efb382602c8ad62544b07cd6bb41aa954c33a814097018b2fe",
+      "lastUpdated": "2026-10-02T16:34:04.864Z"
+    },
+    {
+      "path": ".zed/prompts/sauron.md",
+      "runtime": "zed",
+      "backupPath": null,
+      "checksum": "sha256:6a4267a7de1bee022694c3bd5cf0cfbf533a0e42e9b745f2a25170c965e76ba2",
+      "lastUpdated": "2026-10-02T16:34:04.865Z"
+    },
+    {
+      "path": ".codex/instructions.md",
+      "runtime": "codex",
+      "backupPath": null,
+      "checksum": "sha256:a678a867e958115f4a0d20c4a8a1d2240bedc1c19054278c9e4ed5a136307ff4",
+      "lastUpdated": "2026-10-02T16:34:04.867Z"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "runtime": "vscode",
+      "backupPath": ".sauron\\backups\\.vscode_settings.json.2026-10-02T16-34-04-868Z.bak",
+      "checksum": "sha256:1b68964084c5f44d99a7688329104f065b423b9e343616e3c8a5db223990abd6",
+      "lastUpdated": "2026-10-02T16:34:04.870Z"
+    },
+    {
+      "path": ".vscode/sauron.instructions.md",
+      "runtime": "vscode",
+      "backupPath": null,
+      "checksum": "sha256:c5181e0bae85dbe7672de0bbe571f847646a6c8df02604d00c4778eb456e1914",
+      "lastUpdated": "2026-10-02T16:34:04.872Z"
+    },
+    {
+      "path": "GEMINI.md",
+      "runtime": "gemini",
+      "backupPath": null,
+      "checksum": "sha256:53cc9006bb6385dc136adeea5427987151ac78e0b8d81674ba53ebe20f7287e0",
+      "lastUpdated": "2026-10-02T16:34:04.873Z"
+    },
+    {
+      "path": ".qwen/system.md",
+      "runtime": "qwen",
+      "backupPath": null,
+      "checksum": "sha256:97ea693639fb6cdef5ed40d81b1121cdc9375e4251a4b34926be57de8820124a",
+      "lastUpdated": "2026-10-02T16:34:04.874Z"
+    },
+    {
+      "path": ".kimi/prompt.md",
+      "runtime": "kimi",
+      "backupPath": null,
+      "checksum": "sha256:5950075694ca885c1742fa8d283dc6b2670f0a2ff67dfbe0abd17347e9daa9bf",
+      "lastUpdated": "2026-10-02T16:34:04.876Z"
+    },
+    {
+      "path": ".kirorules",
+      "runtime": "kiro",
+      "backupPath": null,
+      "checksum": "sha256:ee14294e0224ba8668eb090e06a78fc6a327077428ba594ffc797469407d1dd9",
+      "lastUpdated": "2026-10-02T16:34:04.878Z"
+    },
+    {
+      "path": ".hermesrules",
+      "runtime": "hermes",
+      "backupPath": null,
+      "checksum": "sha256:08986b8fe2701b88286ec7db5dfbd8e48fa31c325fc3befec6b91bfa0ac0422f",
+      "lastUpdated": "2026-10-02T16:34:04.880Z"
+    },
+    {
+      "path": ".openclaude/config.json",
+      "runtime": "openclaude",
+      "backupPath": null,
+      "checksum": "sha256:46648556ff88ce39f766af57ff129b18547582c6e67690a03824d6639f0460bd",
+      "lastUpdated": "2026-10-02T16:34:04.883Z"
+    },
+    {
+      "path": ".opencode/instructions.md",
+      "runtime": "opencode",
+      "backupPath": null,
+      "checksum": "sha256:c978565c5128573384cfad1c82d315b7bdbd3a6709ae36e09dacaa54482aaf68",
+      "lastUpdated": "2026-10-02T16:34:04.885Z"
+    },
+    {
+      "path": ".pirules",
+      "runtime": "pi",
+      "backupPath": null,
+      "checksum": "sha256:242e0ee344a44917a6aa9df0c5124d59a68280bd4dedade92d0093aac95ed7a3",
+      "lastUpdated": "2026-10-02T16:34:04.887Z"
+    },
+    {
+      "path": ".adalrules",
+      "runtime": "adal",
+      "backupPath": null,
+      "checksum": "sha256:6ee53f03f111289a647a470866fcd2893e1f52eb31421d5ae56a40b57ba70f2b",
+      "lastUpdated": "2026-10-02T16:34:04.889Z"
+    },
+    {
+      "path": ".codebuddy/rules.md",
+      "runtime": "codebuddy",
+      "backupPath": null,
+      "checksum": "sha256:21eed8909c60f3acc79c2de31494881161105145cf715c9c09556fd35f55d5ae",
+      "lastUpdated": "2026-10-02T16:34:04.891Z"
+    },
+    {
+      "path": ".agents/skills/architecture-documentation/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:3276884948dc8755920b1aff8052c75551490c260f5c2aaa67fb04ae0af5e57c",
+      "lastUpdated": "2026-10-22T19:38:23.475Z"
+    },
+    {
+      "path": ".agents/skills/multi-tenancy-architecture/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:2050ea32574dbd1e14cab913ac5e48b6a24b88174b4b26b044bb8762b2841dd5",
+      "lastUpdated": "2026-10-22T19:38:23.481Z"
+    },
+    {
+      "path": ".agents/skills/auth-architecture/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:833aa472b33af782b6669fa4c7a85fd789581b06d4bf5da7ae83ffda0a42e1e0",
+      "lastUpdated": "2026-10-22T19:38:23.483Z"
+    },
+    {
+      "path": ".agents/skills/backend-development/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:e3bc581f19563d94970c9f6a60337f5d1d0d61e9673addfa3c7ebfd8b9f01b17",
+      "lastUpdated": "2026-10-22T19:38:23.488Z"
+    },
+    {
+      "path": ".agents/skills/prisma-drizzle-orm/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:71708e6b434bec82f3fbd62369eb94d832d8be56cecf3179b1adf06761b12671",
+      "lastUpdated": "2026-10-22T19:38:23.493Z"
+    },
+    {
+      "path": ".agents/skills/database-migration/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:fd17e6b243c926c6bf16f1b4ae161d3beae2e31d10c7fe3c8caf3c68d9f3a120",
+      "lastUpdated": "2026-10-22T19:38:23.499Z"
+    },
+    {
+      "path": ".agents/skills/react-principles/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:8ca368e57e5ca6a042a105f30c34d24d7e6910b3d076d57db2a98be1b6781448",
+      "lastUpdated": "2026-10-22T19:38:23.507Z"
+    },
+    {
+      "path": ".agents/skills/typescript-standards/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:dd8dabeab00b262ca5aa3bc0a35978578e4b0a4cbd06055075b6dc7b46b5f95a",
+      "lastUpdated": "2026-10-22T19:38:23.513Z"
+    },
+    {
+      "path": ".agents/skills/frontend-testing/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:c2135dced9ebac08a74bfba0213f4682c90e8318c473ed3f2cf84b9f45aaab89",
+      "lastUpdated": "2026-10-22T19:38:23.520Z"
+    },
+    {
+      "path": ".agents/skills/forms-validation/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:a94d841288194e1758eedbb15553f86f9256eec2896cdf6d7371e447e0e41c5c",
+      "lastUpdated": "2026-10-22T19:38:23.529Z"
+    },
+    {
+      "path": ".agents/skills/security-auditor/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:059ed18e399119eeff266f823016cd936b10d01ef1e5a2218285e824eab7953f",
+      "lastUpdated": "2026-10-22T19:38:23.538Z"
+    },
+    {
+      "path": ".agents/skills/testing-principles/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:7b3446bf76e2243e101bb0f9a922bc998630eb780edc0fb0450a670d069c76bf",
+      "lastUpdated": "2026-10-22T19:38:23.546Z"
+    },
+    {
+      "path": ".agents/skills/test-data-management/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:fdb155cdb6d7296bbb93146985077445817d3510e45a75f8a0a29c46c484de6d",
+      "lastUpdated": "2026-10-22T19:38:23.554Z"
+    },
+    {
+      "path": ".agents/skills/lean-code/references/reuse-ladder.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:d06ecf321b8d2079f2e98fe85032ca2c53bde0ad76af78dfff06896074ed70a3",
+      "lastUpdated": "2026-10-22T19:38:23.564Z"
+    },
+    {
+      "path": ".agents/skills/lean-code/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:d3a5db0ee94bd890f541ba88405a7c7c0657ce3ef7da95cc7ef491d01b990ed5",
+      "lastUpdated": "2026-10-22T19:38:23.565Z"
+    },
+    {
+      "path": ".agents/skills/handoff/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:524e26294725eafcc2ad6d111a45b87fa887b6e6ee8b5bf0fa8c02f605c6d3c3",
+      "lastUpdated": "2026-10-22T19:38:23.575Z"
+    },
+    {
+      "path": ".agents/skills/cicd-deployment/SKILL.md",
+      "runtime": "add",
+      "backupPath": null,
+      "checksum": "sha256:a1da16c9789ca5621648ec3339428ef9816a885dd80f38e9c90e4a2b308fc5ac",
+      "lastUpdated": "2026-10-22T19:38:23.581Z"
+    }
+  ]
+}

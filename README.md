@@ -122,6 +122,28 @@ npm run db:studio --prefix backend   # browse the database
 npm run test:integration             # isolated .local arctic_test database
 ```
 
+## Sauron development workflow
+
+Run `npm ci` at the repository root to install the pinned Sauron developer tools.
+Repository-aware agents follow `AGENTS.md` and select only the skills and
+Fellowship reviews relevant to the task. The app keeps its existing architecture,
+design system and runtime commands.
+
+```bash
+npm run sauron:doctor                # installation, routing and skill integrity
+npm run sauron:route                 # recommend capabilities for current changes
+npm run sauron:find -- "frontend accessibility" --limit 5 --json
+npm run sauron:graph                 # scoped source dependency map, on demand
+npm run test:frontend                # shared control and currency contracts
+npm run test:browser                 # Playwright against the isolated local app
+npm run verify                      # workflow checks, typecheck, unit tests, builds
+```
+
+See [the operating guide](projects/arctic/context/engineering-loop/sauron-workflow.md)
+for agent roles, the complete frontend design lifecycle, intentional skill updates,
+and verification limits. CI runs automated checks; integration and browser checks
+remain required for changes that need them.
+
 ## Layout
 
 ```

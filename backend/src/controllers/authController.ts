@@ -52,7 +52,7 @@ export const login = async (req: Request, res: Response) => {
 
     // Compare against a dummy hash when the user is missing so that a bad email
     // and a bad password take a similar amount of time — no user enumeration.
-    const hash = user?.password ?? '$2a$10$invalidinvalidinvalidinvalidinvalidinvalidinvalidinvalidinv';
+    const hash = user?.password ?? '$2a$10$Wix1c9dKZqmtQ7KvCgdWg.u1PW9UIiu0ATvKjj2CP4oA54q2n1EFG';
     const passwordValid = await bcrypt.compare(password, hash);
 
     if (!user || !passwordValid) {

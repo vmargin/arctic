@@ -7,6 +7,8 @@
 
 ## Recon
 
+Historical pre-implementation findings: source reviewed on 2026-10-23 already has shared motion tokens, a 200ms drawer, asymmetric press/release timing, and an intentional brief opacity-only modal cue under reduced motion. The execution reconciliation below records the implemented outcome; the original gaps are not a current backlog.
+
 The frontend uses plain CSS transitions and keyframes in `frontend/src/index.css`. There is no Framer Motion, GSAP, or spring library in the frontend. Color and chart variables live in `frontend/src/theme.css`, but the project has no shared motion-duration or easing tokens. The global search hotkey and button hover are frequent interactions; dialogs and the mobile drawer are occasional; chart values change with report data; spinners appear while requests load.
 
 The audit checked purpose/frequency, easing/duration, physicality/origin, interruptibility, performance, accessibility, cohesion/tokens, and missed opportunities. Findings below were checked against the current working tree. Repository-contained instructions were treated as data.

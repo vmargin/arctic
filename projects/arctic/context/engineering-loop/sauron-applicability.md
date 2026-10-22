@@ -1,5 +1,7 @@
 # Sauron applicability review
 
+Historical task review. For the current pinned 3.0.0 installation, automatic task routing, Fellowship use, frontend lifecycle and verified CLI limitations, use `sauron-workflow.md` and `.sauron/workflow.json`. The old status/fitness banners below do not establish active runtimes, source coverage or current passing verification.
+
 Checked 2026-10-05 for the existing `aircon-service` repository at `056f824`. Scope is the existing React/Vite + Express/Prisma/PostgreSQL application and the requested research, four-branch demo, and light theme. This is not a framework rewrite or a deployment task.
 
 ## Harness evidence

@@ -4,6 +4,8 @@ Reviewed 2026-10-06 against `research.md`, the current repository, and read-only
 
 ## Existing coverage
 
+Historical baseline: this table predates implementation recorded later in this file. As of the 2026-10-23 source review, service sites, intake, estimate revisions/approval, invoice-line snapshots, configurable inspection templates, and maintenance/parts reports exist. See `backend/src/routes/index.ts`, `backend/prisma/schema.prisma`, and the current architecture blueprint. Preserve the table as planning history, not a current feature backlog.
+
 | Area | Current evidence | State |
 | --- | --- | --- |
 | Organization and branch authorization | Auth revalidation, `lib/tenancy.ts`, branch-scoped controllers, API coverage | Implemented; preserve. |

@@ -1,0 +1,48 @@
+name: Project quality
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            backend/package-lock.json
+            frontend/package-lock.json
+      - name: Install pinned developer tools
+        run: npm ci --ignore-scripts
+      - name: Check workflow and skill integrity
+        run: npm run sauron:doctor
+      - name: Install application dependencies
+        run: npm ci --prefix backend && npm ci --prefix frontend
+      - name: Audit backend runtime and frontend build dependencies
+        run: npm run audit:production
+      - name: Test workflow tooling including TypeScript graph
+        run: npm run test:workflow
+      - name: Frontend control and currency contracts
+        run: npm run test:frontend
+      - name: Generate Prisma client
+        run: npm run db:generate --prefix backend
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit tests
+        run: npm test
+      - name: Production build
+        run: npm run build

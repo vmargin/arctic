@@ -1,5 +1,7 @@
 # Taste pass and applicability audit
 
+Historical design pass. The 2026-10-23 source review confirms shared motion tokens and an intentional brief opacity-only modal cue under reduced motion. Earlier blanket descriptions of disabled animation below predate the final motion implementation; use `theme.css`, `index.css`, and `plans/README.md` reconciliation for current behavior.
+
 Date: 2026-10-06
 Status: Complete for the existing-project audit; dashboard-specific direction routed onward.
 

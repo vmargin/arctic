@@ -1,0 +1,436 @@
+{
+  "version": 1,
+  "context": "projects/arctic/context/engineering-loop",
+  "skills": [
+    {
+      "path": ".agents/skills/accessibility-auditor/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/api-design/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/architecture-documentation/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/arctic-workflow/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/auth-architecture/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/backend-development/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/blueprint-session/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/cicd-deployment/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/code-inspection/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/database-migration/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/database-principles/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/01-foundations-and-systems/design-system-architecture-spec/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/01-foundations-and-systems/design-taste-spec-exporter/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/01-foundations-and-systems/token-system-wireframe-builder/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/01-foundations-and-systems/ui-framework-selection-matrix/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/01-foundations-and-systems/ui-ux-stack-compliance-auditor/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/anti-slop-aesthetic-tuning-engine/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/apple-human-interface-motion-spec/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/codex-aida-landing-structure-engine/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/ethereal-glass-agency-aesthetic/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/high-craft-gpu-performance-auditor/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/industrial-brutalist-telemetry-hud/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/02-aesthetic-engines-and-styles/utilitarian-minimalist-layout-engine/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/03-brand-presets-and-visual-identity/brandkit-moodboard-prompt-generator/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/04-motion-and-interaction/codebase-motion-gap-scanner/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/04-motion-and-interaction/motion-codebase-refactor-planner/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/04-motion-and-interaction/motion-vocabulary-term-resolver/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/04-motion-and-interaction/multi-variant-interactive-prototyping/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/04-motion-and-interaction/pull-request-motion-review-gate/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/05-vision-and-code-generation/desktop-web-landing-image-prompter/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/05-vision-and-code-generation/mobile-app-screen-image-prompter/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/05-vision-and-code-generation/visual-comp-image-to-code-converter/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/06-audit-refactor-and-enforcement/legacy-taste-v1-fallback-handler/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/06-audit-refactor-and-enforcement/visual-redesign-diagnostic-auditor/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/06-audit-refactor-and-enforcement/zero-placeholder-code-enforcer/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/design-engineering/SKILL.md",
+      "reason": "On-demand frontend lifecycle capability."
+    },
+    {
+      "path": ".agents/skills/engineering-loop/blueprint-session/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/engineering-loop/code-inspection/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/engineering-loop/context-checkpoint/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/engineering-loop/failure-triage/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/engineering-loop/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/engineering-loop/ui-snapshot-tokens/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/forms-validation/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/frontend-testing/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/handoff/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/lean-code/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/multi-tenancy-architecture/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/prisma-drizzle-orm/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/react-principles/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/security-auditor/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/test-data-management/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/testing-principles/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    },
+    {
+      "path": ".agents/skills/typescript-standards/SKILL.md",
+      "reason": "Selected project workflow or stack capability."
+    }
+  ],
+  "requiredFiles": [
+    "AGENTS.md",
+    ".agents/skills/arctic-workflow/SKILL.md",
+    "projects/arctic/context/engineering-loop/sauron-workflow.md",
+    "projects/arctic/context/engineering-loop/architecture-blueprint.md",
+    "projects/arctic/context/engineering-loop/coding-standards.md",
+    "projects/arctic/context/engineering-loop/DESIGN.md",
+    "sauron.config.yaml",
+    ".github/workflows/quality.yml"
+  ],
+  "routes": [
+    {
+      "id": "frontend",
+      "match": [
+        "frontend/",
+        "scripts/frontend-contracts.test.cjs",
+        "scripts/verify-browser.cjs"
+      ],
+      "skills": [
+        ".agents/skills/design-engineering/SKILL.md",
+        ".agents/skills/react-principles/SKILL.md",
+        ".agents/skills/accessibility-auditor/SKILL.md",
+        ".agents/skills/frontend-testing/SKILL.md"
+      ],
+      "agents": [
+        "frodo",
+        "merry"
+      ],
+      "checks": [
+        "npm run typecheck",
+        "npm run test:frontend",
+        "npm run build",
+        "Browser: changed journeys, both themes, 320px/mobile/desktop, keyboard and reduced motion"
+      ],
+      "context": [
+        "DESIGN.md",
+        "coding-standards.md"
+      ]
+    },
+    {
+      "id": "backend",
+      "match": [
+        "backend/src/",
+        "api/"
+      ],
+      "skills": [
+        ".agents/skills/api-design/SKILL.md",
+        ".agents/skills/backend-development/SKILL.md",
+        ".agents/skills/multi-tenancy-architecture/SKILL.md",
+        ".agents/skills/engineering-loop/code-inspection/SKILL.md"
+      ],
+      "agents": [
+        "aragorn",
+        "boromir",
+        "merry"
+      ],
+      "checks": [
+        "npm run typecheck",
+        "npm test",
+        "npm run build",
+        "npm run test:integration"
+      ],
+      "context": [
+        "architecture-blueprint.md",
+        "coding-standards.md"
+      ]
+    },
+    {
+      "id": "database",
+      "match": [
+        "backend/prisma/"
+      ],
+      "skills": [
+        ".agents/skills/database-principles/SKILL.md",
+        ".agents/skills/prisma-drizzle-orm/SKILL.md",
+        ".agents/skills/database-migration/SKILL.md",
+        ".agents/skills/test-data-management/SKILL.md"
+      ],
+      "agents": [
+        "aragorn",
+        "boromir",
+        "pippin"
+      ],
+      "checks": [
+        "npm run typecheck",
+        "npm test",
+        "npm run build",
+        "npm run test:integration"
+      ],
+      "context": [
+        "architecture-blueprint.md",
+        "coding-standards.md"
+      ]
+    },
+    {
+      "id": "authentication",
+      "match": [
+        "backend/src/middleware/auth.ts",
+        "backend/src/controllers/authController.ts",
+        "backend/src/lib/tenancy.ts",
+        "frontend/src/auth/"
+      ],
+      "skills": [
+        ".agents/skills/auth-architecture/SKILL.md",
+        ".agents/skills/security-auditor/SKILL.md",
+        ".agents/skills/multi-tenancy-architecture/SKILL.md"
+      ],
+      "agents": [
+        "boromir",
+        "pippin"
+      ],
+      "checks": [
+        "npm run typecheck",
+        "npm test",
+        "npm run build",
+        "npm run test:integration"
+      ],
+      "context": [
+        "architecture-blueprint.md"
+      ]
+    },
+    {
+      "id": "tests",
+      "match": [
+        "backend/tests/",
+        "scripts/sauron.test.cjs",
+        "scripts/frontend-contracts.test.cjs",
+        "scripts/verify-browser.cjs"
+      ],
+      "skills": [
+        ".agents/skills/testing-principles/SKILL.md",
+        ".agents/skills/test-data-management/SKILL.md"
+      ],
+      "agents": [
+        "merry"
+      ],
+      "checks": [
+        "npm test",
+        "npm run test:workflow",
+        "npm run test:frontend"
+      ],
+      "context": [
+        "coding-standards.md"
+      ]
+    },
+    {
+      "id": "workflow",
+      "match": [
+        ".agents/",
+        ".sauron/",
+        ".codex/",
+        ".cursor/",
+        ".github/",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "GEMINI.md",
+        ".cursorrules",
+        "sauron.config.yaml",
+        "sauron-skills.lock.json",
+        "package.json",
+        "package-lock.json",
+        "scripts/sauron.cjs",
+        "scripts/sauron.test.cjs"
+      ],
+      "skills": [
+        ".agents/skills/arctic-workflow/SKILL.md",
+        ".agents/skills/lean-code/SKILL.md"
+      ],
+      "agents": [
+        "aragorn"
+      ],
+      "checks": [
+        "npm run sauron:doctor",
+        "npm run test:workflow"
+      ],
+      "context": [
+        "sauron-workflow.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "match": [
+        "vercel.json",
+        "railway.json",
+        "docker-compose.yml",
+        "scripts/deploy-vercel-migrations.cjs",
+        "backend/package.json",
+        "backend/package-lock.json",
+        "frontend/package.json",
+        "frontend/package-lock.json"
+      ],
+      "skills": [
+        ".agents/skills/cicd-deployment/SKILL.md",
+        ".agents/skills/security-auditor/SKILL.md"
+      ],
+      "agents": [
+        "samwise",
+        "boromir"
+      ],
+      "checks": [
+        "npm run typecheck",
+        "npm test",
+        "npm run build"
+      ],
+      "context": [
+        "architecture-blueprint.md",
+        "coding-standards.md"
+      ]
+    }
+  ],
+  "architecture": {
+    "sourceRoots": [
+      "backend/src",
+      "frontend/src",
+      "api"
+    ],
+    "frontendRoot": "frontend/src"
+  }
+}

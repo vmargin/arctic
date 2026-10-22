@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -41,23 +41,24 @@ import { AuthProvider, useAuth } from "./auth/AuthContext";
 import { getAllList } from "./api/api";
 import { Booking, Customer } from "./types";
 import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
-import Bookings from "./components/Bookings";
-import Customers from "./components/Customers";
-import Technicians from "./components/Technicians";
-import Financials from "./components/Financials";
-import Reports from "./components/Reports";
-import Calendar from "./components/Calendar";
-import Units from "./components/Units";
-import Inventory from "./components/Inventory";
-import Settings from "./components/Settings";
-import ServiceDesk from "./components/ServiceDesk";
-import InspectionTemplates from "./components/InspectionTemplates";
 import WorkOrderModal from "./components/WorkOrderModal";
 import Modal from "./components/Modal";
 import { Avatar } from "./components/Visuals";
 import { jobNumber } from "./api/operational";
 import { Spinner, ErrorState } from "./components/ui";
+
+const Dashboard = lazy(() => import("./components/Dashboard"));
+const Bookings = lazy(() => import("./components/Bookings"));
+const Customers = lazy(() => import("./components/Customers"));
+const Technicians = lazy(() => import("./components/Technicians"));
+const Financials = lazy(() => import("./components/Financials"));
+const Reports = lazy(() => import("./components/Reports"));
+const Calendar = lazy(() => import("./components/Calendar"));
+const Units = lazy(() => import("./components/Units"));
+const Inventory = lazy(() => import("./components/Inventory"));
+const Settings = lazy(() => import("./components/Settings"));
+const ServiceDesk = lazy(() => import("./components/ServiceDesk"));
+const InspectionTemplates = lazy(() => import("./components/InspectionTemplates"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -451,7 +452,9 @@ function AppLayout({
           </div>
         </header>
         <main className="app-main" id="main-content" tabIndex={-1}>
-          <Outlet />
+          <Suspense fallback={<Spinner label="Loading view..." />}>
+            <Outlet />
+          </Suspense>
           <footer className="app-footer">
             <span>
               <strong>ARCTIC AIRCON</strong>Keep every space cool.

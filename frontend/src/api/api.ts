@@ -92,15 +92,17 @@ export async function getAllList<T>(
 }
 
 /** Peso formatting, used everywhere money is shown. */
+const currencyFormatter = new Intl.NumberFormat("en-PH", {
+  style: "currency",
+  currency: "PHP",
+  minimumFractionDigits: 2,
+});
+
 export function formatCurrency(
   value: string | number | null | undefined,
 ): string {
   const n = Number(value ?? 0);
-  return new Intl.NumberFormat("en-PH", {
-    style: "currency",
-    currency: "PHP",
-    minimumFractionDigits: 2,
-  }).format(Number.isFinite(n) ? n : 0);
+  return currencyFormatter.format(Number.isFinite(n) ? n : 0);
 }
 
 export function formatDate(value: string | Date, withTime = false): string {

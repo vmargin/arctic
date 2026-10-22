@@ -10,6 +10,16 @@ Preserve PENDING → CONFIRMED → ON_SITE → COMPLETED and cancellation from o
 
 ## Architecture and migration
 
+### Source topology (verified 2026-10-23)
+
+`backend/src/server.ts` owns process startup/shutdown; `app.ts` composes HTTP middleware and same-origin SPA serving; `routes/index.ts` exposes `/api/v1` and the `/api` compatibility alias. Existing controllers own Zod validation, orchestration and Prisma transactions. Shared domain guards and money serializers live in `lib/`; `db/prisma.ts` owns the database client. Do not impose generated repository/service layers on this controller-based application.
+
+`frontend/src/main.tsx` mounts `App.tsx`, which composes the router, QueryClient and providers. `auth/AuthContext.tsx` owns identity state; typed clients in `api/` own HTTP access; components use shared `components/ui/index.tsx`, `Modal.tsx`, `index.css` and `theme.css`. Keep API contracts, frontend types and serializers aligned. Existing `index` entrypoints are intentional. `api/index.ts` adapts the same Express application for the existing serverless deployment.
+
+The 2026-10-23 execution adds native React lazy page imports with Suspense around the existing Outlet. Authentication, QueryClient, layout and shared dialogs remain outside that page-loading boundary. See `sauron-architecture-execution-2026-10-23.md` for measured bundle changes and static-analysis limits.
+
+Service sites, unscheduled requests, estimate revisions/approval, invoice line snapshots, inspection templates, and maintenance/parts reports are implemented. The initial coverage table in `applicability-matrix.md` describes an earlier baseline. Consult current routes, Prisma models and source before treating an old gap as work to add.
+
 Reuse Express/Prisma/PostgreSQL, React/Vite/TanStack Query/Lucide. Domain guards remain with existing API owners and transactions; shared UI tokens and controls own appearance. Additive PostgreSQL migrations preserve original rows. No reset, destructive schema replacement, original environment-secret disclosure, live seed, or cloud data mutation during development.
 
 Use installed native PostgreSQL for an isolated local development database and test database. The local launcher serves the API and built frontend on one URL, prepares only missing configuration and keeps local records across restarts. Existing cloud deployment settings remain compatible. Applying a new production migration is a separate necessary deployment operation and must be verified explicitly, not inferred from a push.

@@ -47,6 +47,7 @@ import {
   PageHeader,
   Spinner,
   inputClass,
+  onTabKeyDown,
 } from "./ui";
 import Modal from "./Modal";
 
@@ -429,10 +430,13 @@ export default function ServiceDesk() {
 
       <Card>
         <div className="page-toolbar">
-          <div className="tab-bar" role="tablist" aria-label="Service desk views">
+          <div className="tab-bar" role="tablist" aria-label="Service desk views" onKeyDown={onTabKeyDown}>
             <button
               type="button"
               role="tab"
+              id="desk-tab-requests"
+              aria-controls="desk-panel-requests"
+              tabIndex={tab === "requests" ? 0 : -1}
               aria-selected={tab === "requests"}
               className={tab === "requests" ? "tab active" : "tab"}
               onClick={() => { setTab("requests"); setSearch(""); setActionError(""); }}
@@ -442,6 +446,9 @@ export default function ServiceDesk() {
             <button
               type="button"
               role="tab"
+              id="desk-tab-sites"
+              aria-controls="desk-panel-sites"
+              tabIndex={tab === "sites" ? 0 : -1}
               aria-selected={tab === "sites"}
               className={tab === "sites" ? "tab active" : "tab"}
               onClick={() => { setTab("sites"); setSearch(""); setActionError(""); }}
@@ -480,6 +487,7 @@ export default function ServiceDesk() {
         </div>
       </Card>
 
+      <section id={`desk-panel-${tab}`} role="tabpanel" aria-labelledby={`desk-tab-${tab}`} tabIndex={0}>
       {tab === "requests" ? (
         <Card>
           {visibleRequests.length ? (
@@ -599,6 +607,8 @@ export default function ServiceDesk() {
           )}
         </Card>
       )}
+
+      </section>
 
       <NewRequestDialog
         isOpen={dialog === "new-request"}

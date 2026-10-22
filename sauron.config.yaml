@@ -1,4 +1,6 @@
-# yaml-language-server: $schema=./schema/sauron.schema.json
+# yaml-language-server: $schema=./node_modules/sauron-ai/config/schema/sauron.schema.json
+# Policy intent for optional adapter generation, not proof of host enforcement.
+# Task routing and actual checks live in .sauron/workflow.json and AGENTS.md.
 version: "1.0.0"
 
 project:
@@ -7,7 +9,7 @@ project:
   language: "typescript" # typescript | python | rust | go | multi
   framework: "react-vite-express" # optional framework hint
 
-# The 17 Runtimes Bound by sauron (set true/false per workspace)
+# Runtime adapter generation preferences (enable only the runtime in use)
 runtimes:
   claude: false
   cursor: false
@@ -21,7 +23,7 @@ runtimes:
   hermes: false
   kimi: false
   kiro: false
-  openclaude: false
+  openclaw: false
   opencode: false
   pi: false
   qwen: false
@@ -82,13 +84,13 @@ departments:
 # Token Optimization Engine (Caveman Mode)
 caveman:
   default_mode: "off" # full (~60% token savings) | lite (~40%) | ultra (~75%) | off
-  enforce_on_commits: true
+  enforce_on_commits: false
 
 # Security & Command Firewall
 security:
   agent_guard: true
-  block_destructive_commands: true # hard-blocks rm -rf, DROP DATABASE, git push --force
-  protect_credentials: true # hard-blocks .env, id_rsa, AWS/GCP credential reads
+  block_destructive_commands: true # policy intent; native host permissions enforce commands
+  protect_credentials: true # policy intent; never assume an active guard hook
   enforce_docker_sandbox: false # set true to require Docker container execution
 
 # Safety and Sandboxing Settings

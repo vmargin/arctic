@@ -1,0 +1,8 @@
+# ARCTIC Sauron workflow
+
+Read `AGENTS.md` and `.agents/skills/arctic-workflow/SKILL.md` before development work.
+Use `.sauron/workflow.json` to select relevant skills and Fellowship reviews; the operating guide is `projects/arctic/context/engineering-loop/sauron-workflow.md`.
+
+Preserve Express/Prisma/PostgreSQL and React/Vite/TanStack Query/Tailwind v4/Lucide. Reuse ARCTIC design tokens and shared components. Generated Sauron examples are subordinate to the actual app.
+Run proportionate checks; `npm run verify` covers tooling, typecheck, backend unit tests and builds. API/schema work also needs isolated integration tests; UI changes need actual browser checks.
+No blanket TDD, terminology approvals, framework rewrites, bulk sync, automatic publication or production data operations follow from this adapter. Follow the current user scope and root instructions.

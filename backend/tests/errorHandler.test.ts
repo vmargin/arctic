@@ -27,6 +27,36 @@ describe('redact', () => {
         expect(redact('plain')).toBe('plain');
         expect(redact(null)).toBeNull();
     });
+
+    it('masks entire objects and arrays beyond the traversal limit', () => {
+        for (const secret of [{ password: 'deep-password' }, [{ token: 'deep-token' }]]) {
+            const payload = { a: { b: { c: { d: { e: secret } } } } };
+            expect(redact(payload)).toEqual({ a: { b: { c: { d: { e: '[REDACTED]' } } } } });
+        }
+    });
+
+    it('keeps deeply nested credentials out of actual error logs', () => {
+        const warningLog = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+        const response = { status: jest.fn().mockReturnThis(), json: jest.fn() };
+        try {
+            errorHandler(
+                new ValidationError('Invalid payload'),
+                { method: 'POST', originalUrl: '/api/v1/auth/login', body: {
+                    a: { b: { c: { d: { e: { password: 'deep-password', token: 'deep-token' } } } } },
+                } } as Request,
+                response as unknown as Response,
+                jest.fn(),
+            );
+            expect(warningLog).toHaveBeenCalledTimes(1);
+            const log = warningLog.mock.calls[0][0] as string;
+            expect(log).not.toContain('deep-password');
+            expect(log).not.toContain('deep-token');
+            expect(JSON.parse(log).body.a.b.c.d.e).toBe('[REDACTED]');
+            expect(response.status).toHaveBeenCalledWith(400);
+        } finally {
+            warningLog.mockRestore();
+        }
+    });
 });
 
 describe('AppError', () => {

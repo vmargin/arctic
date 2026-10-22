@@ -20,6 +20,7 @@ import {
   PageHeader,
   Spinner,
   inputClass,
+  onTabKeyDown,
 } from "./ui";
 
 const cents = (value: string | number | null | undefined) =>
@@ -344,18 +345,20 @@ export default function Reports() {
         </div>
       </Card>
       <Card>
-        <div className="tab-bar" role="tablist" aria-label="Report views">
-          <button type="button" role="tab" aria-selected={reportTab === "billing"} aria-controls="report-billing" className={reportTab === "billing" ? "active" : ""} onClick={() => setReportTab("billing")}>Jobs & billing</button>
-          <button type="button" role="tab" aria-selected={reportTab === "parts"} aria-controls="report-parts" className={reportTab === "parts" ? "active" : ""} onClick={() => setReportTab("parts")}>Parts usage</button>
-          <button type="button" role="tab" aria-selected={reportTab === "maintenance"} aria-controls="report-maintenance" className={reportTab === "maintenance" ? "active" : ""} onClick={() => setReportTab("maintenance")}>Maintenance due</button>
+        <div className="tab-bar" role="tablist" aria-label="Report views" onKeyDown={onTabKeyDown}>
+          <button id="report-tab-billing" type="button" role="tab" tabIndex={reportTab === "billing" ? 0 : -1} aria-selected={reportTab === "billing"} aria-controls="report-billing" className={reportTab === "billing" ? "active" : ""} onClick={() => setReportTab("billing")}>Jobs & billing</button>
+          <button id="report-tab-parts" type="button" role="tab" tabIndex={reportTab === "parts" ? 0 : -1} aria-selected={reportTab === "parts"} aria-controls="report-parts" className={reportTab === "parts" ? "active" : ""} onClick={() => setReportTab("parts")}>Parts usage</button>
+          <button id="report-tab-maintenance" type="button" role="tab" tabIndex={reportTab === "maintenance" ? 0 : -1} aria-selected={reportTab === "maintenance"} aria-controls="report-maintenance" className={reportTab === "maintenance" ? "active" : ""} onClick={() => setReportTab("maintenance")}>Maintenance due</button>
         </div>
       </Card>
       {invalid ? (
-        <p role="alert" className="notice notice-error">
-          The start date must be on or before the end date.
-        </p>
+        <section id={`report-${reportTab}`} role="tabpanel" aria-labelledby={`report-tab-${reportTab}`} tabIndex={0}>
+          <p role="alert" className="notice notice-error">
+            The start date must be on or before the end date.
+          </p>
+        </section>
       ) : reportTab === "billing" ? (
-        <section id="report-billing" role="tabpanel" aria-label="Jobs and billing report" className="page-stack">
+        <section id="report-billing" role="tabpanel" aria-labelledby="report-tab-billing" tabIndex={0} className="page-stack">
           <div className="metric-grid">
             {[
               {
@@ -552,7 +555,7 @@ export default function Reports() {
           </Card>
         </section>
       ) : reportTab === "parts" ? (
-        <section id="report-parts" role="tabpanel" aria-label="Parts usage report" className="page-stack">
+        <section id="report-parts" role="tabpanel" aria-labelledby="report-tab-parts" tabIndex={0} className="page-stack">
           {partsUsage.isLoading ? (
             <Spinner label="Loading parts usage…" />
           ) : partsUsage.isError ? (
@@ -590,7 +593,7 @@ export default function Reports() {
           )}
         </section>
       ) : (
-        <section id="report-maintenance" role="tabpanel" aria-label="Maintenance due report" className="page-stack">
+        <section id="report-maintenance" role="tabpanel" aria-labelledby="report-tab-maintenance" tabIndex={0} className="page-stack">
           {maintenanceDue.isLoading ? (
             <Spinner label="Loading maintenance due report…" />
           ) : maintenanceDue.isError ? (

@@ -5,6 +5,23 @@ import { BookingStatus, PaymentStatus, STATUS_LABELS } from "../../types";
 export function cn(...parts: Array<string | false | null | undefined>): string {
   return parts.filter(Boolean).join(" ");
 }
+
+/** Horizontal tabs activate on focus; native click keeps each view's state rules. */
+export function onTabKeyDown(event: React.KeyboardEvent<HTMLDivElement>): void {
+  if (event.altKey || event.ctrlKey || event.metaKey) return;
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+  const tabs = Array.from(
+    event.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]:not(:disabled)'),
+  );
+  const current = tabs.findIndex((tab) => tab === event.target);
+  if (current < 0) return;
+  const next = event.key === "Home" ? 0
+    : event.key === "End" ? tabs.length - 1
+      : (current + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+  event.preventDefault();
+  tabs[next].focus();
+  tabs[next].click();
+}
 export const Card = ({
   className,
   children,
@@ -132,7 +149,7 @@ export const Field = ({
       {child
         ? React.cloneElement(child, {
             id,
-            ...(hint ? { "aria-describedby": `${id}-hint` } : {}),
+            ...(hint ? { "aria-describedby": [child.props["aria-describedby"], `${id}-hint`].filter(Boolean).join(" ") } : {}),
           })
         : children}
       {hint && (
