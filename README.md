@@ -1,148 +1,94 @@
-# ARCTIC AIRCON | Service Management
+![ARCTIC AIRCON: an original THE MARGIN project cover](.github/media/cover.svg)
 
-Internal tool for an aircon servicing company with multiple branches. Staff log
-in, book jobs, dispatch technicians, and bill the work.
+# ARCTIC AIRCON
 
-**Live demo:** https://arcticaircon.vercel.app
+**One workspace for service requests, field operations, and billing.**
 
-**Stack:** Express + Prisma + PostgreSQL, React + Vite + Tailwind, TypeScript
-throughout. It deploys as **one service on one URL** — the API also serves the
-built frontend, so there is no second host and no CORS to configure.
+An educational service-management application for a multi-branch aircon workflow. Staff coordinate requests, estimates, schedules, technicians, work orders, parts, invoices, and dated payment records.
 
----
+[Live demo](https://arcticaircon.vercel.app/) · [Case study](https://vmargin.github.io/projects/arctic/)
 
-## Run it locally
+![ARCTIC dashboard from an isolated local synthetic-data workspace](.github/media/screenshot.webp)
 
-You need Node 18+ and PostgreSQL 14+ installed.
+## Implemented workflows
 
-```bash
+| Area | Capabilities |
+| --- | --- |
+| Service desk | Requests, customer sites, estimates, approval, and request-to-work-order handoff. |
+| Scheduling and field work | Calendar, branch-scoped technician assignments, ordered booking lifecycle, configurable inspections, and field work orders. |
+| Customers and equipment | Service history, unit records, and explicit next-maintenance dates. |
+| Parts | Branch stock, restocks, adjustments, and work-order consumption. |
+| Billing and reporting | One invoice per booking, separate dated receipts, open balances, service summaries, and billing CSV. |
+| Workspace | Organization/branch permissions, audit records, search, and persistent light/dark appearance. |
+
+## Architecture and rules
+
+```mermaid
+flowchart LR
+  UI[React and TanStack Query] --> API[Express and validation]
+  API --> Scope[Organization and branch access]
+  Scope --> Rules[Workflow and billing rules]
+  Rules --> DB[(Prisma / PostgreSQL)]
+```
+
+- Organization admins see their organization; branch leaders read and write within their own branch.
+- Bookings follow `PENDING → CONFIRMED → ON_SITE → COMPLETED`; cancellation is allowed while open. Completed and cancelled records are terminal.
+- A technician belongs to the assigned job's branch. Completed work can receive its invoice afterward.
+- Each booking has at most one invoice. Money uses `Decimal(12,2)`; payment status moves forward.
+- Stock operations are transactional and support retry-safe request keys. Writes retain an audit trail.
+
+**Stack:** TypeScript, Express, Prisma, PostgreSQL, React, Vite, TanStack Query, Tailwind CSS.
+
+## Run locally
+
+Install Node.js 24 and PostgreSQL 14 or later. The local launcher finds PostgreSQL on Windows or accepts its binary directory through `PG_BIN`.
+
+```powershell
 git clone https://github.com/vmargin/arctic.git
 cd arctic
-
-npm run setup                      # install backend + frontend deps
-npm run local                      # create/use isolated .local data, migrate, seed, build and serve
+npm run setup
+npm run local
 ```
 
-Open **http://localhost:5000**. The local launcher uses its own PostgreSQL
-cluster and `arctic_dev`/`arctic_test` databases under `.local`; it does not read
-`backend/.env` or connect to cloud data. Keep its terminal open while using the
-app. Use `Ctrl+C` to stop the app, then `npm run local:stop` to stop its local
-PostgreSQL cluster.
+Open http://localhost:5000. The launcher creates its own PostgreSQL cluster on port 5433, `arctic_dev` and `arctic_test` databases, and local configuration under ignored `.local/`. It does not read `backend/.env` or use cloud data.
 
-### Demo logins
+Local synthetic accounts share password `demo1234`:
 
-Seeded only into the isolated local demo database. Password for all listed
-accounts is `demo1234`.
-
-| Email              | Access |
-| ------------------ | --- |
-| `admin@arctic.com` | All branches: Makati, Quezon City, Cavite, and Bulacan |
-| `south@arctic.com` | Makati Branch |
-| `north@arctic.com` | Quezon City Branch |
-
-The seed is additive and idempotent. Cavite and Bulacan are demo branches with
-no seeded staff; assign real branch users before expecting dispatch there.
-
-Use synthetic data only. This is an educational portfolio system, not production
-business software.
-
----
-
-## What's in it
-
-| Page | What you can do |
+| Account | Access |
 | --- | --- |
-| **Dashboard** | Review today's jobs, dispatch, service trends, and attention items. |
-| **Service desk** | Track unscheduled requests, service sites, estimate revisions, approval, and request-to-work-order handoff. |
-| **Calendar / service jobs** | Schedule work, assign technicians, advance the ordered lifecycle, and open field work orders. |
-| **Clients / aircon units** | Keep customer sites, equipment details, service history, and explicit next-maintenance dates together. |
-| **Inspection templates** | Let organization admins configure checks and measurements for future work orders. |
-| **Parts inventory** | Track branch stock, low-stock levels, restocks, adjustments, and parts used on a work order. |
-| **Invoices & payments** | Issue one invoice per job and record separate dated receipts with exact amounts. |
-| **Reports** | Filter visits, billing, parts usage, and saved maintenance dates by date and branch; review service/technician summaries and open balances; export billing CSV. Age bands do not imply a due date or overdue status. |
-| **Theme** | Switch between the deep-teal dark theme and the cool light theme; the browser saves the choice. |
+| `admin@arctic.com` | All four demo branches |
+| `south@arctic.com` | Makati |
+| `north@arctic.com` | Quezon City |
 
-### Rules the API enforces
+Cavite and Bulacan are synthetic branches without seeded staff. These logins describe the isolated local seed, not a promise of hosted credentials. Stop the application with Ctrl+C, then run `npm run local:stop` to stop its database cluster. The local seed is additive and guarded; never run it against a hosted database.
 
-- **Two roles.** `ADMIN` sees the whole organization. `BRANCH_LEADER` is scoped
-  to their own branch for both reads and writes.
-- **Booking lifecycle.** `PENDING → CONFIRMED → ON_SITE → COMPLETED`, with
-  cancellation allowed from any open state. Completed and cancelled are final,
-  so a job can't skip dispatch or be reopened.
-- Field work may be completed before billing. A completed job can still receive
-  its one invoice afterward, and the completed service record cannot be deleted.
-- **A technician can only be assigned to their own branch's jobs.**
-- **One invoice per booking**, amounts stored as `Decimal(12,2)` (never floats).
-- **Payment only moves forward.** `UNPAID → PARTIAL → PAID`, and `PAID` is
-  terminal — collected money can't be quietly un-collected. Reversing a real
-  payment belongs in a refund flow with its own trail, not a silent field edit.
-- Writes are recorded in an audit log.
-- **Field checklist.** Inspection items preserve Pending, Pass, Follow-up, and
-  Not applicable outcomes while still reading older checked-only records.
-- **Stock ledger.** Restocks, adjustments, and work-order use are branch-scoped,
-  transaction-protected, and retry-safe when the client sends the same request key.
+## Deployment
+
+The checked-in `vercel.json` builds `frontend/dist` and routes `/api` to `api/index.ts`, which exports the Express application. This is the configuration for the linked Vercel demo. The build includes a migration helper, so deployment requires a reviewed database target and migration history.
+
+A separate `railway.json` supports a long-running Node service that serves the built frontend and API together. It is an alternative configuration, not the current demo's hosting topology.
+
+Configure `DATABASE_URL` and a private random `JWT_SECRET`; use `NODE_ENV=production` and the proxy setting appropriate to the host. See `backend/.env.example` and the deployment scripts. No real records or cloud database are needed for the local instructions above.
+
+## Verify
+
+```powershell
+npm run typecheck
+npm test
+npm run build
+npm run test:integration
+```
+
+The integration command uses the isolated local test database. Historical workflow/browser evidence is in [verification](projects/arctic/context/engineering-loop/verification.md); the [motion record](plans/README.md) documents an earlier completed change. An HTTP response alone does not verify an authenticated workflow.
+
+## Contribution and limits
+
+I gathered requirements, defined workflows, made relational-data architecture decisions, and reviewed features and outputs. Development and deployment are AI-assisted. The demo uses invented records and does not establish real adoption or business impact.
+
+Public customer booking, purchasing/transfers/truck stock, a technician mobile app, email/SMS delivery, and PDF invoice export are outside the implemented scope. Report age bands do not imply a due date or overdue status.
+
+[Architecture](projects/arctic/context/engineering-loop/architecture-blueprint.md) · [Screenshot provenance](.github/media/README.md)
 
 ---
 
-## Deploy
-
-Any host that runs a Node process and gives you a Postgres database. `railway.json`
-is included, so on Railway you add a Postgres service and set two variables:
-
-| Variable       | Value                                                            |
-| -------------- | ---------------------------------------------------------------- |
-| `DATABASE_URL` | your Postgres connection string                                  |
-| `JWT_SECRET`   | 32+ random chars — `node backend/scripts/generate-jwt-secret.js` |
-
-Also set `NODE_ENV=production` and `TRUST_PROXY=1`. Then:
-
-```
-build:  npm run setup && npm run build
-start:  npm run db:deploy --prefix backend && npm start
-```
-
-The start command applies migrations, then boots the server, which serves both
-the API and the frontend on the same port. Do not run the demo seed against a
-hosted or production database. Create production accounts through the
-organization's separately approved provisioning process; `db:seed` is guarded
-for the isolated local `arctic_dev` demo database only.
-
-Check `/health` after deploying — it returns `MISCONFIGURED` and names any
-missing variable rather than failing silently.
-
----
-
-## Useful commands
-
-```bash
-npm run typecheck                    # both packages
-npm test                             # backend unit tests
-npm run build                        # production build of both
-npm run db:studio --prefix backend   # browse the database
-npm run test:integration             # isolated .local arctic_test database
-```
-
-## Layout
-
-```
-backend/
-  prisma/schema.prisma    # data model and additive migration history
-  prisma/seed-demo.ts     # guarded, additive local demo data
-  src/routes/             # all endpoints, one file
-  src/controllers/        # request handling + validation (zod)
-  src/lib/tenancy.ts      # the org/branch scoping rules
-  src/lib/bookingStatus.ts# the lifecycle state machine
-  src/middleware/         # auth, errors, rate limits, logging
-frontend/
-  src/App.tsx             # routes + app shell
-  src/auth/               # login state, token handling
-  src/api/api.ts          # axios client, currency/date helpers
-  src/components/         # one file per page, plus shared ui/
-```
-
-## Deliberately not built yet
-
-Public/customer-facing booking, advanced inventory purchasing/transfers/truck
-stock, technician mobile app, email/SMS notifications, and PDF invoice export.
-Branch stock, job part usage, service requests, estimates, work orders, invoices,
-and payment records are implemented in this app.
+[More projects](https://github.com/vmargin) · [Portfolio](https://vmargin.github.io/) · [LinkedIn](https://www.linkedin.com/in/vmargin/)
