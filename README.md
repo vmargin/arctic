@@ -1,5 +1,3 @@
-![ARCTIC AIRCON: an original THE MARGIN project cover](.github/media/cover.svg)
-
 # ARCTIC AIRCON
 
 **One workspace for service requests, field operations, and billing.**
